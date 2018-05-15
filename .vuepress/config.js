@@ -29,5 +29,14 @@ module.exports = {
         ]
       },
     ]
+  },
+
+  markdown: {
+    externalLinks: { target: '_blank', rel: 'noopener noreferrer' },
+    anchor: { permalink: true, permalinkBefore: true, permalinkSymbol: '§' },
+    toc: { includeLevel: [2, 3] },
+    config: md => {
+      // md.use(require('markdown-it-xxx'))
+    }
   }
 }
