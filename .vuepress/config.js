@@ -12,23 +12,33 @@ module.exports = {
   themeConfig: {
     navbar: false,
     search: false,
-    sidebar: [
-      '/about',
-      {
-        title: "foo",
-        collapsable: false,
-        children: [
-          '/foo/hoge',
-        ]
-      },
-      {
-        title: "bar",
-        collapsable: true,
-        children: [
-          [ '/bar/fuga', 'alt fuga page name' ],
-        ]
-      },
-    ]
+    sidebar: {
+      '/foo/': [
+        [ 'hoge' ]
+      ],
+      '/bar/': [
+        { children: [['fuga', '123']] }
+      ],
+
+      // fallback must be last
+      '/': [
+        '/about',
+        {
+          title: "foo",
+          collapsable: false,
+          children: [
+            '/foo/hoge',
+          ]
+        },
+        {
+          title: "bar",
+          collapsable: true,
+          children: [
+            [ '/bar/fuga', 'alt fuga page name' ],
+          ]
+        },
+      ],
+    }
   },
 
   markdown: {
